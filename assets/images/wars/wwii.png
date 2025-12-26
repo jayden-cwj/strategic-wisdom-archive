@@ -1,0 +1,6 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#1a252f"/>
+  <text x="200" y="140" font-family="Arial" font-size="28" fill="#ecf0f1" text-anchor="middle">World War II</text>
+  <text x="200" y="170" font-family="Arial" font-size="16" fill="#95a5a6" text-anchor="middle">1939-1945</text>
+  <text x="200" y="200" font-family="Arial" font-size="14" fill="#7f8c8d" text-anchor="middle">Placeholder Image</text>
+</svg>
