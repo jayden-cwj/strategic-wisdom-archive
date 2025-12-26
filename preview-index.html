@@ -9,11 +9,18 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <h1><a href="preview-index.html">Global Arsenal Archive</a></h1>
+            <div class="header-content">
+                <h1><a href="preview-index.html">Global Arsenal Archive</a></h1>
+                <button id="langToggle" class="lang-toggle" aria-label="Language Toggle">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option" data-lang="ko">KO</span>
+                </button>
+            </div>
             <nav>
                 <a href="preview-index.html">Home</a>
-                <a href="#">Weapons</a>
-                <a href="#">Wars</a>
+                <a href="weapons.html">Weapons</a>
+                <a href="wars.html">Wars</a>
             </nav>
         </div>
     </header>
@@ -120,5 +127,71 @@
             <p>&copy; 2025 Global Arsenal Archive | Lead Developer: Jayden</p>
         </div>
     </footer>
+
+    <script>
+        // Language Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const langToggle = document.getElementById('langToggle');
+            const langOptions = document.querySelectorAll('.lang-option');
+
+            // Load saved language preference
+            let currentLang = localStorage.getItem('language') || 'en';
+            setLanguage(currentLang);
+
+            // Toggle language on click
+            langToggle.addEventListener('click', function() {
+                currentLang = currentLang === 'en' ? 'ko' : 'en';
+                setLanguage(currentLang);
+                localStorage.setItem('language', currentLang);
+            });
+
+            function setLanguage(lang) {
+                // Update button state
+                langOptions.forEach(option => {
+                    if (option.dataset.lang === lang) {
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+
+                // Toggle content visibility
+                document.body.setAttribute('data-lang', lang);
+
+                // Show/hide English content
+                const enElements = document.querySelectorAll('.card-title-en, .title-en, .summary-en, [lang="en"]');
+                enElements.forEach(el => {
+                    el.style.display = lang === 'en' ? '' : 'none';
+                });
+
+                // Show/hide Korean content
+                const koElements = document.querySelectorAll('.card-title-ko, .title-ko, .summary-ko, [lang="ko"]');
+                koElements.forEach(el => {
+                    el.style.display = lang === 'ko' ? '' : 'none';
+                });
+
+                // If Korean, make Korean titles larger
+                if (lang === 'ko') {
+                    document.querySelectorAll('.card-title-ko').forEach(el => {
+                        el.style.fontSize = '1.3rem';
+                        el.style.color = '#3498db';
+                    });
+                    document.querySelectorAll('.title-ko').forEach(el => {
+                        el.style.fontSize = '2.5rem';
+                        el.style.color = '#3498db';
+                    });
+                } else {
+                    document.querySelectorAll('.card-title-ko').forEach(el => {
+                        el.style.fontSize = '';
+                        el.style.color = '';
+                    });
+                    document.querySelectorAll('.title-ko').forEach(el => {
+                        el.style.fontSize = '';
+                        el.style.color = '';
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>
