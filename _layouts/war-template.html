@@ -3,70 +3,106 @@ layout: default
 ---
 <div class="war-detail container">
     <div class="header-section">
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title_en }}" class="main-thumbnail">
+        <img src="{{ page.url | relative_url }}{{ page.thumbnail }}" alt="{{ page.title_en }}" class="main-thumbnail">
         <div class="title-section">
             <h1 class="title-en">{{ page.title_en }}</h1>
             <h2 class="title-ko">{{ page.title_ko }}</h2>
             <p class="summary-en">{{ page.summary_en }}</p>
-            <p class="summary-ko">{{ page.summary_ko }}</p>
         </div>
     </div>
 
-    {% if page.timeline %}
-    <div class="timeline-section">
-        <h3>Timeline</h3>
-        <table class="info-table">
-            <tr>
-                <th>Period</th>
-                <td>{{ page.timeline.start }} - {{ page.timeline.end }}</td>
-            </tr>
-            <tr>
-                <th>Duration</th>
-                <td>{{ page.timeline.duration }}</td>
-            </tr>
-        </table>
-    </div>
-    {% endif %}
-
-    {% if page.participants %}
-    <div class="participants-section">
-        <h3>Participants</h3>
-        <div class="participants-grid">
-            {% if page.participants.allies %}
-            <div class="participant-group">
-                <h4>Allies</h4>
-                <ul>
-                {% for ally in page.participants.allies %}
-                    <li>{{ ally }}</li>
-                {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-
-            {% if page.participants.axis %}
-            <div class="participant-group">
-                <h4>Axis</h4>
-                <ul>
-                {% for axis in page.participants.axis %}
-                    <li>{{ axis }}</li>
-                {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
+    <div class="data-grid">
+        <!-- Timeline -->
+        {% if page.timeline %}
+        <div class="info-section">
+            <h3>Timeline</h3>
+            <table class="info-table">
+                <tr>
+                    <th>Start Date</th>
+                    <td>{{ page.timeline.start }}</td>
+                </tr>
+                <tr>
+                    <th>End Date</th>
+                    <td>{{ page.timeline.end }}</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>{{ page.timeline.duration }}</td>
+                </tr>
+            </table>
         </div>
-    </div>
-    {% endif %}
+        {% endif %}
 
-    {% if page.major_battles %}
-    <div class="battles-section">
-        <h3>Major Battles</h3>
-        <ul class="battles-list">
-        {% for battle in page.major_battles %}
-            <li>{{ battle }}</li>
-        {% endfor %}
-        </ul>
+        <!-- Participants -->
+        {% if page.participants %}
+        <div class="info-section">
+            <h3>Participants</h3>
+            <div class="participants-grid">
+                {% for group in page.participants %}
+                <div class="participant-group">
+                    <h4>{{ group[0] | replace: '_', ' ' | capitalize }}</h4>
+                    <ul>
+                    {% for participant in group[1] %}
+                        <li>{{ participant }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Major Events -->
+        {% if page.major_events %}
+        <div class="info-section">
+            <h3>Major Events</h3>
+            <ul class="events-list">
+            {% for event in page.major_events %}
+                <li>{{ event }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        <!-- Theaters -->
+        {% if page.major_theaters %}
+        <div class="info-section">
+            <h3>Major Theaters</h3>
+            <ul class="theaters-list">
+            {% for theater in page.major_theaters %}
+                <li>{{ theater }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Outcome -->
+        {% if page.outcome %}
+        <div class="info-section">
+            <h3>Outcome</h3>
+            <ul class="outcome-list">
+            {% for item in page.outcome %}
+                <li>{{ item }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Casualties -->
+        {% if page.casualties %}
+         <div class="info-section">
+            <h3>Casualties</h3>
+            <table class="info-table">
+                {% for item in page.casualties %}
+                <tr>
+                    <th>{{ item[0] | capitalize }}</th>
+                    <td>{{ item[1] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 
     <div class="back-link">
         <a href="{{ '/' | relative_url }}">&larr; Back to Dashboard</a>

@@ -3,64 +3,84 @@ layout: default
 ---
 <div class="weapon-detail container">
     <div class="header-section">
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title_en }}" class="main-thumbnail">
+        <img src="{{ page.url | relative_url }}{{ page.thumbnail }}" alt="{{ page.title_en }}" class="main-thumbnail">
         <div class="title-section">
             <h1 class="title-en">{{ page.title_en }}</h1>
             <h2 class="title-ko">{{ page.title_ko }}</h2>
             <p class="summary-en">{{ page.summary_en }}</p>
-            <p class="summary-ko">{{ page.summary_ko }}</p>
         </div>
     </div>
 
-    {% if page.specs %}
-    <div class="specs-section">
-        <h3>Technical Specifications</h3>
-        <table class="specs-table">
-            <tr>
-                <th>Property</th>
-                <th>Value</th>
-            </tr>
-            <tr>
-                <td>Origin</td>
-                <td>{{ page.specs.origin }}</td>
-            </tr>
-            <tr>
-                <td>Type</td>
-                <td>{{ page.specs.type }}</td>
-            </tr>
-            {% if page.specs.weight %}
-            <tr>
-                <td>Weight</td>
-                <td>{{ page.specs.weight }} tons</td>
-            </tr>
-            {% endif %}
-            {% if page.specs.armor_front %}
-            <tr>
-                <td>Front Armor</td>
-                <td>{{ page.specs.armor_front }} mm</td>
-            </tr>
-            {% endif %}
-            {% if page.specs.firepower %}
-            <tr>
-                <td>Main Gun Caliber</td>
-                <td>{{ page.specs.firepower }} mm</td>
-            </tr>
-            {% endif %}
-            {% if page.specs.top_speed %}
-            <tr>
-                <td>Top Speed</td>
-                <td>{{ page.specs.top_speed }} km/h</td>
-            </tr>
-            {% endif %}
-            {% if page.specs.deployment_status %}
-            <tr>
-                <td>Deployment Status</td>
-                <td>{{ page.specs.deployment_status }}</td>
-            </tr>
-            {% endif %}
-        </table>
+    <div class="data-grid">
+        <!-- General Information -->
+        {% if page.history %}
+        <div class="info-section">
+            <h3>General Information</h3>
+            <table class="info-table">
+                {% for item in page.history %}
+                <tr>
+                    <th>{{ item[0] | capitalize }}</th>
+                    <td>{{ item[1] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- Specifications -->
+        {% if page.specs %}
+        <div class="info-section">
+            <h3>Technical Specifications</h3>
+            <table class="info-table">
+                {% for item in page.specs %}
+                    {% if item[0] == 'armor' %}
+                        <tr>
+                            <th>Armor</th>
+                            <td>
+                                <ul>
+                                {% for part in item[1] %}
+                                    <li><strong>{{ part[0] | replace: '_', ' ' | capitalize }}:</strong> {{ part[1] }}</li>
+                                {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <th>{{ item[0] | replace: '_', ' ' | capitalize }}</th>
+                            <td>{{ item[1] }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- Variants -->
+        {% if page.variants %}
+        <div class="info-section">
+            <h3>Variants</h3>
+            <ul class="variants-list">
+                {% for variant in page.variants %}
+                <li>
+                    <strong>{{ variant.name }}:</strong> {{ variant.description }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Operational History -->
+        {% if page.operational_history %}
+        <div class="info-section">
+            <h3>Operational History</h3>
+            <ul class="history-list">
+                {% for item in page.operational_history %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 
     <div class="back-link">
         <a href="{{ '/' | relative_url }}">&larr; Back to Dashboard</a>
