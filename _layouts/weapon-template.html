@@ -1,0 +1,68 @@
+---
+layout: default
+---
+<div class="weapon-detail container">
+    <div class="header-section">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title_en }}" class="main-thumbnail">
+        <div class="title-section">
+            <h1 class="title-en">{{ page.title_en }}</h1>
+            <h2 class="title-ko">{{ page.title_ko }}</h2>
+            <p class="summary-en">{{ page.summary_en }}</p>
+            <p class="summary-ko">{{ page.summary_ko }}</p>
+        </div>
+    </div>
+
+    {% if page.specs %}
+    <div class="specs-section">
+        <h3>Technical Specifications</h3>
+        <table class="specs-table">
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Origin</td>
+                <td>{{ page.specs.origin }}</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>{{ page.specs.type }}</td>
+            </tr>
+            {% if page.specs.weight %}
+            <tr>
+                <td>Weight</td>
+                <td>{{ page.specs.weight }} tons</td>
+            </tr>
+            {% endif %}
+            {% if page.specs.armor_front %}
+            <tr>
+                <td>Front Armor</td>
+                <td>{{ page.specs.armor_front }} mm</td>
+            </tr>
+            {% endif %}
+            {% if page.specs.firepower %}
+            <tr>
+                <td>Main Gun Caliber</td>
+                <td>{{ page.specs.firepower }} mm</td>
+            </tr>
+            {% endif %}
+            {% if page.specs.top_speed %}
+            <tr>
+                <td>Top Speed</td>
+                <td>{{ page.specs.top_speed }} km/h</td>
+            </tr>
+            {% endif %}
+            {% if page.specs.deployment_status %}
+            <tr>
+                <td>Deployment Status</td>
+                <td>{{ page.specs.deployment_status }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+    {% endif %}
+
+    <div class="back-link">
+        <a href="{{ '/' | relative_url }}">&larr; Back to Dashboard</a>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+# Global Arsenal Archive Configuration
+title: "Global Arsenal Archive"
+description: "A data-driven platform archiving global military history and weapon specifications"
+baseurl: "/global-arsenal-archive"
+url: "https://jayden-cwj.github.io"
+
+# Collections Configuration
+collections:
+  weapons:
+    output: true
+    permalink: /weapons/:name/
+  wars:
+    output: true
+    permalink: /wars/:name/
+
+# Default settings for collections
+defaults:
+  - scope:
+      path: ""
+      type: "weapons"
+    values:
+      layout: "weapon-template"
+  - scope:
+      path: ""
+      type: "wars"
+    values:
+      layout: "war-template"
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Exclude files from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

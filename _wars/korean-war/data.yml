@@ -1,0 +1,37 @@
+---
+layout: war-template
+id: "korean-war"
+thumbnail: "index.png"
+
+# Bilingual Metadata
+title_ko: "한국전쟁"
+title_en: "Korean War"
+summary_ko: "1950년부터 1953년까지 한반도에서 벌어진 전쟁."
+summary_en: "Conflict on the Korean Peninsula from 1950 to 1953."
+
+# War Data
+timeline:
+  start: "June 25, 1950"
+  end: "July 27, 1953"
+  duration: "3 years, 1 month, and 2 days"
+
+participants:
+  allies:
+    - "South Korea"
+    - "United States"
+    - "United Kingdom"
+    - "Turkey"
+    - "Canada"
+    - "Australia"
+  axis:
+    - "North Korea"
+    - "China"
+    - "Soviet Union"
+
+major_battles:
+  - "Battle of Pusan Perimeter (1950)"
+  - "Incheon Landing (1950)"
+  - "Battle of Chosin Reservoir (1950)"
+  - "Battle of Heartbreak Ridge (1951)"
+  - "Battle of Pork Chop Hill (1953)"
+---

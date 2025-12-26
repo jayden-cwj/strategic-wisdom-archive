@@ -1,0 +1,21 @@
+---
+layout: weapon-template
+id: "m4-sherman"
+thumbnail: "index.jpg"
+
+# Bilingual Metadata
+title_ko: "M4 셔먼"
+title_en: "M4 Sherman"
+summary_ko: "제2차 세계대전 미국의 중형전차."
+summary_en: "American medium tank widely used in WWII."
+
+# Quantitative Data (For future simulation)
+specs:
+  origin: "United States"
+  type: "Medium Tank"
+  weight: 30.3            # Float (Tons)
+  armor_front: 76         # Integer (mm)
+  firepower: 75           # Main Gun Caliber (mm)
+  top_speed: 48           # Integer (km/h)
+  deployment_status: "Active"
+---

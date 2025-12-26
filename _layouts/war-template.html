@@ -1,0 +1,74 @@
+---
+layout: default
+---
+<div class="war-detail container">
+    <div class="header-section">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title_en }}" class="main-thumbnail">
+        <div class="title-section">
+            <h1 class="title-en">{{ page.title_en }}</h1>
+            <h2 class="title-ko">{{ page.title_ko }}</h2>
+            <p class="summary-en">{{ page.summary_en }}</p>
+            <p class="summary-ko">{{ page.summary_ko }}</p>
+        </div>
+    </div>
+
+    {% if page.timeline %}
+    <div class="timeline-section">
+        <h3>Timeline</h3>
+        <table class="info-table">
+            <tr>
+                <th>Period</th>
+                <td>{{ page.timeline.start }} - {{ page.timeline.end }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ page.timeline.duration }}</td>
+            </tr>
+        </table>
+    </div>
+    {% endif %}
+
+    {% if page.participants %}
+    <div class="participants-section">
+        <h3>Participants</h3>
+        <div class="participants-grid">
+            {% if page.participants.allies %}
+            <div class="participant-group">
+                <h4>Allies</h4>
+                <ul>
+                {% for ally in page.participants.allies %}
+                    <li>{{ ally }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if page.participants.axis %}
+            <div class="participant-group">
+                <h4>Axis</h4>
+                <ul>
+                {% for axis in page.participants.axis %}
+                    <li>{{ axis }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if page.major_battles %}
+    <div class="battles-section">
+        <h3>Major Battles</h3>
+        <ul class="battles-list">
+        {% for battle in page.major_battles %}
+            <li>{{ battle }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="back-link">
+        <a href="{{ '/' | relative_url }}">&larr; Back to Dashboard</a>
+    </div>
+</div>

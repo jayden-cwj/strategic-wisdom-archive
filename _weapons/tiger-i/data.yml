@@ -1,0 +1,21 @@
+---
+layout: weapon-template
+id: "tiger-i"
+thumbnail: "index.jpg"
+
+# Bilingual Metadata
+title_ko: "6호 전차 티거 I"
+title_en: "Tiger I (Panzer VI)"
+summary_ko: "제2차 세계대전 독일의 중전차."
+summary_en: "Iconic German heavy tank of WWII."
+
+# Quantitative Data (For future simulation)
+specs:
+  origin: "Germany"
+  type: "Heavy Tank"
+  weight: 54.0            # Float (Tons)
+  armor_front: 100        # Integer (mm)
+  firepower: 88           # Main Gun Caliber (mm)
+  top_speed: 38           # Integer (km/h)
+  deployment_status: "Active"
+---

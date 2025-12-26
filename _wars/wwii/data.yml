@@ -1,0 +1,36 @@
+---
+layout: war-template
+id: "wwii"
+thumbnail: "index.png"
+
+# Bilingual Metadata
+title_ko: "제2차 세계대전"
+title_en: "World War II"
+summary_ko: "1939년부터 1945년까지 벌어진 전 세계적 규모의 전쟁."
+summary_en: "Global conflict from 1939 to 1945 involving most of the world's nations."
+
+# War Data
+timeline:
+  start: "September 1, 1939"
+  end: "September 2, 1945"
+  duration: "6 years and 1 day"
+
+participants:
+  allies:
+    - "United States"
+    - "United Kingdom"
+    - "Soviet Union"
+    - "China"
+    - "France"
+  axis:
+    - "Germany"
+    - "Japan"
+    - "Italy"
+
+major_battles:
+  - "Battle of Britain (1940)"
+  - "Battle of Stalingrad (1942-1943)"
+  - "Battle of Midway (1942)"
+  - "D-Day Normandy Invasion (1944)"
+  - "Battle of the Bulge (1944-1945)"
+---
