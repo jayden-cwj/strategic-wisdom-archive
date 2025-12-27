@@ -17,41 +17,7 @@ permalink: /military-history/
         </p>
     </div>
 
-    <!-- Overview Statistics -->
-    <div class="archive-stats">
-        <div class="stat-card">
-            <div class="stat-number">{{ site.wars.size }}</div>
-            <div class="stat-label lang-en-only">Wars & Conflicts</div>
-            <div class="stat-label lang-ko-only">전쟁 및 분쟁</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">{{ site.fortifications.size }}</div>
-            <div class="stat-label lang-en-only">Defense Structures</div>
-            <div class="stat-label lang-ko-only">방어 구조</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">{{ site.strategies.size }}</div>
-            <div class="stat-label lang-en-only">Strategic Systems</div>
-            <div class="stat-label lang-ko-only">전략 시스템</div>
-        </div>
-    </div>
-
     <!-- Introduction -->
-    <div class="archive-introduction">
-        <h2 class="lang-en-only">What We Cover</h2>
-        <h2 class="lang-ko-only">수록 내용</h2>
-        <p class="lang-en-only">
-            This archive documents humanity's defensive wisdom across millennia. From ancient walls to modern fortifications,
-            from tactical innovations to strategic frameworks—we study not the tools of destruction, but the architecture
-            of protection. Each entry includes historical context, strategic analysis, and modern applications.
-        </p>
-        <p class="lang-ko-only">
-            이 아카이브는 수천 년에 걸친 인류의 방어 지혜를 기록합니다. 고대 성벽에서 현대 요새까지,
-            전술적 혁신에서 전략적 틀까지—우리는 파괴의 도구가 아닌 보호의 건축을 연구합니다.
-            각 항목에는 역사적 맥락, 전략적 분석 및 현대적 적용이 포함됩니다.
-        </p>
-    </div>
-
     <!-- Era-Based Organization -->
     <div class="historical-timeline">
         <h2 class="lang-en-only">Historical Timeline</h2>

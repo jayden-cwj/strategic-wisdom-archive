@@ -8,10 +8,6 @@
 
 The **Strategic Wisdom Archive** is a digital laboratory for extracting timeless strategic principles from historical defensive systems. Rather than cataloging tools of destruction, we study the *architecture of protection* - how humanity designed systems to deter conflict, coordinate defenses, and sustain security across generations.
 
-### From "Arsenal" to "Architecture"
-
-This project was rebranded from the "Global Arsenal Archive" (weapons database) to focus on defensive wisdom. This shift reflects a fundamental change in perspective:
-
 - **Old Question:** "How destructive is this weapon?"
 - **New Question:** "What strategic logic made this defense system effective?"
 
