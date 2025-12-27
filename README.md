@@ -22,7 +22,28 @@ We believe that understanding defensive architectures teaches us about:
 
 ---
 
-## 🎯 Three Core Activities
+## 🗂️ Site Structure
+
+The archive is organized into six main sections:
+
+### 1. 📚 Military History
+A comprehensive overview page showing all defense structures and strategic systems organized by historical era. This serves as the main entry point to explore the archive chronologically, from ancient fortifications to future concepts.
+
+[Explore Military History →](/military-history/)
+
+### 2. 🏰 Defense Structures (Fortifications)
+Individual fortifications, walls, and defensive architecture with detailed attribution (who built it, who commissioned it), metrics, and historical context.
+
+[Browse Defense Structures →](/fortifications/)
+
+### 3. ⚔️ Strategies
+Tactical systems and defensive strategies with historical applications showing who used them, when, and against whom. Includes outcomes and strategic lessons learned.
+
+[Browse Strategies →](/strategies/)
+
+---
+
+## 🎯 Interactive Tools
 
 ### 1. 🧮 Strategic Logic Simulator
 An interactive calculator where you adjust defense system variables (deterrence, communication efficiency, durability, terrain, resources) to see their impact on survival probability.
@@ -31,7 +52,12 @@ An interactive calculator where you adjust defense system variables (deterrence,
 
 [Try the Simulator →](/simulator/)
 
-### 2. 📖 Wisdom Chronicles (Bilingual Newsletter)
+### 2. 🗺️ Interactive Defense Map
+A global visualization showing where and why humanity built its greatest defensive systems. Geographic patterns reveal strategic thinking about terrain, trade routes, communication networks, and threat vectors.
+
+[Explore the Map →](/map/)
+
+### 3. 📖 Wisdom Chronicles (Bilingual Insights)
 Monthly insights connecting historical defensive strategies to modern challenges:
 - Leadership & decision-making
 - System design & resilience
@@ -44,15 +70,6 @@ Each post analyzes a specific fortification or strategy and extracts principles 
 - **Policy:** Public safety, strategic planning
 
 [Read the Latest Insights →](/insights/)
-
-### 3. 🗺️ Interactive Defense Map
-A global visualization showing where and why humanity built its greatest defensive systems. Geographic patterns reveal strategic thinking about:
-- Terrain and natural advantages
-- Trade routes and resource access
-- Communication networks
-- Threat vectors
-
-[Explore the Map →](/map/)
 
 ---
 
@@ -163,6 +180,7 @@ strategic-wisdom-archive/
 │       ├── fortifications/
 │       └── strategies/
 ├── index.md                       # Homepage
+├── military-history.md            # Military history overview page
 ├── fortifications.md              # Fortifications collection page
 ├── strategies.md                  # Strategies collection page
 ├── insights.md                    # Insights index

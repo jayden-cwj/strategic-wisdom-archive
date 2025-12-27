@@ -1,5 +1,115 @@
 # Strategic Wisdom Archive - Changelog
 
+## Version 0.0.4 - Era Time Filter (December 27, 2024)
+
+### 🕐 New Feature: Historical Era Filter
+
+**Purpose:** Allow users to filter Military History timeline by specific historical periods.
+
+**Implementation:**
+- Added filter button bar to Military History page
+- 5 filter options: All Eras, Ancient, Medieval, Modern, Contemporary
+- Real-time filtering with smooth animations
+- Bilingual filter labels (English/Korean)
+- Auto-scroll to timeline after filter selection
+
+**Filter Options:**
+- **All Eras**: Show all entries (default)
+- **Ancient**: Before 500 CE (고대)
+- **Medieval**: 500-1500 (중세)
+- **Modern**: 1500-1900 (근대)
+- **Contemporary**: 1900-Present (현대)
+
+**Visual Design:**
+- Filter bar with gradient background
+- Active filter highlighted in blue gradient
+- Hover effects on buttons
+- Smooth show/hide transitions
+- Responsive button layout for mobile
+
+**User Experience:**
+- Click any era to show only entries from that period
+- Future/Sci-Fi/Fantasy eras excluded from filters (still visible in timeline when "All Eras" selected)
+- Smooth scroll to timeline after filter change
+- Clear visual feedback for active selection
+
+---
+
+### 📁 Files Modified
+
+**Updated Files:**
+- `military-history.md` - Added filter UI, CSS styles, and JavaScript functionality
+
+---
+
+### 📊 Statistics
+
+**New Features:**
+- 5 era filter buttons
+- 70+ lines of CSS for filter styling
+- 50+ lines of JavaScript for filter logic
+- Full bilingual support
+
+---
+
+## Version 0.0.3 - Military History Overview Page (December 27, 2024)
+
+### 📚 New Feature: Military History Overview Page
+
+**Purpose:** Provide a comprehensive entry point to explore all archive content organized by historical era.
+
+**Implementation:**
+- Created new `/military-history/` page as primary navigation entry point
+- Combines both fortifications and strategies in chronological view
+- Era-based organization (Ancient, Medieval, Modern, Contemporary, Future, Sci-Fi, Fantasy)
+- Archive statistics dashboard
+- Quick navigation cards to category pages
+
+**Page Sections:**
+1. **Archive Statistics:** Shows total defense structures, strategic systems, and combined entries
+2. **Historical Timeline:** All entries organized by era with type badges (Defense Structure / Strategic System)
+3. **Quick Navigation:** Cards linking to Fortifications and Strategies collection pages
+
+**Visual Features:**
+- Era sections with emoji icons (🏛️ Ancient, 🏰 Medieval, ⚔️ Modern, etc.)
+- Type badges color-coded: Blue for Defense Structures, Purple for Strategic Systems
+- Entry cards showing title, summary, and year (BCE/CE notation)
+- Hover effects and responsive grid layout
+- Fully bilingual (English/Korean)
+
+**Navigation Update:**
+- New navigation order: Home → **Military History** → Defense Structures → Strategies → Simulator → Map → Insights
+- Renamed "Fortifications" to "Defense Structures" in navigation for clarity
+
+**Benefits:**
+- Single page to see entire archive scope
+- Historical context at a glance
+- Easy comparison between eras
+- Clear distinction between physical structures and strategic systems
+
+---
+
+### 📁 Files Modified
+
+**New Files:**
+- `military-history.md` - Main overview page with timeline and statistics
+
+**Updated Files:**
+- `_layouts/default.html` - Added Military History to navigation (first position after Home)
+- `README.md` - Updated site structure documentation to reflect new page and reorganized sections
+
+---
+
+### 📊 Statistics
+
+**New Content:**
+- 1 new major navigation page
+- 400+ lines of page content and embedded CSS
+- Complete bilingual support
+- Dynamic content generation from Jekyll collections
+
+---
+
 ## Version 0.0.2 - Attribution & Historical Context (December 27, 2024)
 
 ### 🏗️ New Feature: Attribution System (Fortifications)
@@ -326,5 +436,5 @@ Beyond numeric metrics, entries can now have qualitative tags for unique charact
 
 ---
 
-*Strategic Wisdom Archive v0.0.2*
+*Strategic Wisdom Archive v0.0.4*
 *"From Destruction to Protection, From Arsenal to Architecture"*
