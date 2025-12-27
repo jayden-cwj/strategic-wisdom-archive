@@ -20,6 +20,11 @@ permalink: /military-history/
     <!-- Overview Statistics -->
     <div class="archive-stats">
         <div class="stat-card">
+            <div class="stat-number">{{ site.wars.size }}</div>
+            <div class="stat-label lang-en-only">Wars & Conflicts</div>
+            <div class="stat-label lang-ko-only">전쟁 및 분쟁</div>
+        </div>
+        <div class="stat-card">
             <div class="stat-number">{{ site.fortifications.size }}</div>
             <div class="stat-label lang-en-only">Defense Structures</div>
             <div class="stat-label lang-ko-only">방어 구조</div>
@@ -28,11 +33,6 @@ permalink: /military-history/
             <div class="stat-number">{{ site.strategies.size }}</div>
             <div class="stat-label lang-en-only">Strategic Systems</div>
             <div class="stat-label lang-ko-only">전략 시스템</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">{{ site.fortifications.size | plus: site.strategies.size }}</div>
-            <div class="stat-label lang-en-only">Total Entries</div>
-            <div class="stat-label lang-ko-only">총 항목</div>
         </div>
     </div>
 
@@ -85,12 +85,12 @@ permalink: /military-history/
             </div>
         </div>
 
-        {% assign all_entries = site.fortifications | concat: site.strategies | sort: 'year' %}
+        {% assign all_wars = site.wars | sort: 'year' %}
         {% assign eras = "ancient,medieval,modern,contemporary,future,scifi,fantasy" | split: "," %}
 
         {% for era in eras %}
-            {% assign era_entries = all_entries | where: "era", era %}
-            {% if era_entries.size > 0 %}
+            {% assign era_wars = all_wars | where: "era", era %}
+            {% if era_wars.size > 0 %}
             <div class="era-section">
                 <h3 class="era-title">
                     {% if era == "ancient" %}
@@ -115,36 +115,28 @@ permalink: /military-history/
                         <span class="lang-en-only">🐉 Fantasy Settings</span>
                         <span class="lang-ko-only">🐉 판타지</span>
                     {% endif %}
-                    <span class="entry-count">({{ era_entries.size }})</span>
+                    <span class="entry-count">({{ era_wars.size }} wars)</span>
                 </h3>
 
                 <div class="era-entries">
-                    {% for entry in era_entries %}
-                    <a href="{{ entry.url | relative_url }}" class="history-entry-card">
+                    {% for war in era_wars %}
+                    <a href="{{ war.url | relative_url }}" class="history-entry-card war-card">
                         <div class="entry-type">
-                            {% if entry.collection == "fortifications" %}
-                                <span class="type-badge fortification-badge lang-en-only">Defense Structure</span>
-                                <span class="type-badge fortification-badge lang-ko-only">방어 구조</span>
-                            {% else %}
-                                <span class="type-badge strategy-badge lang-en-only">Strategic System</span>
-                                <span class="type-badge strategy-badge lang-ko-only">전략 시스템</span>
-                            {% endif %}
+                            <span class="type-badge war-badge lang-en-only">War / Conflict</span>
+                            <span class="type-badge war-badge lang-ko-only">전쟁 / 분쟁</span>
                         </div>
                         <h4 class="entry-title">
-                            <span class="lang-en-only">{{ entry.title_en }}</span>
-                            <span class="lang-ko-only">{{ entry.title_ko }}</span>
+                            <span class="lang-en-only">{{ war.title_en }}</span>
+                            <span class="lang-ko-only">{{ war.title_ko }}</span>
                         </h4>
                         <p class="entry-summary">
-                            <span class="lang-en-only">{{ entry.summary_en | truncate: 120 }}</span>
-                            <span class="lang-ko-only">{{ entry.summary_ko | truncate: 120 }}</span>
+                            <span class="lang-en-only">{{ war.summary_en | truncate: 120 }}</span>
+                            <span class="lang-ko-only">{{ war.summary_ko | truncate: 120 }}</span>
                         </p>
-                        {% if entry.year %}
+                        {% if war.war_info.period_en %}
                         <div class="entry-year">
-                            {% if entry.year < 0 %}
-                                {{ entry.year | abs }} BCE
-                            {% else %}
-                                {{ entry.year }} CE
-                            {% endif %}
+                            <span class="lang-en-only">{{ war.war_info.period_en }}</span>
+                            <span class="lang-ko-only">{{ war.war_info.period_ko }}</span>
                         </div>
                         {% endif %}
                     </a>
@@ -405,6 +397,11 @@ permalink: /military-history/
 
 .strategy-badge {
     background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    color: #fff;
+}
+
+.war-badge {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: #fff;
 }
 
