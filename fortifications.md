@@ -47,6 +47,44 @@ permalink: /fortifications/
         </div>
     </div>
 
+    <!-- Wars List Section -->
+    {% if site.wars.size > 0 %}
+    <div class="wars-reference-section">
+        <h3 class="lang-en-only">📜 Related Wars & Conflicts</h3>
+        <h3 class="lang-ko-only">📜 관련 전쟁 및 분쟁</h3>
+        <p class="section-description lang-en-only">Explore wars that utilized these defensive structures:</p>
+        <p class="section-description lang-ko-only">이러한 방어 구조물을 활용한 전쟁 탐색:</p>
+        <div class="wars-list">
+            {% assign sorted_wars = site.wars | sort: 'year' %}
+            {% for war in sorted_wars %}
+            <a href="{{ war.url | relative_url }}" class="war-reference-card">
+                <div class="war-era-badge">
+                    {% if war.era == "ancient" %}🏛️ Ancient
+                    {% elsif war.era == "medieval" %}🏰 Medieval
+                    {% elsif war.era == "modern" %}⚔️ Modern
+                    {% elsif war.era == "contemporary" %}🛡️ Contemporary
+                    {% endif %}
+                </div>
+                <h4>
+                    <span class="lang-en-only">{{ war.title_en }}</span>
+                    <span class="lang-ko-only">{{ war.title_ko }}</span>
+                </h4>
+                <p class="war-period">
+                    <span class="lang-en-only">{{ war.war_info.period_en }}</span>
+                    <span class="lang-ko-only">{{ war.war_info.period_ko }}</span>
+                </p>
+                <p class="war-structures-count lang-en-only">
+                    {{ war.defensive_structures.size }} fortifications used
+                </p>
+                <p class="war-structures-count lang-ko-only">
+                    {{ war.defensive_structures.size }}개 요새 활용
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
     <section class="collection-section">
         <div class="grid-container" id="fortifications-grid">
             {% for fort in site.fortifications %}
