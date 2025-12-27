@@ -6,7 +6,7 @@ permalink: /strategies/
 ---
 
 <div class="dashboard container">
-    <p>
+
     <div class="collection-filters">
         <div class="filter-group">
             <label class="lang-en-only">Filter by Era:</label>
@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
     margin-bottom: 2rem;
     display: flex;
     flex-wrap: wrap;

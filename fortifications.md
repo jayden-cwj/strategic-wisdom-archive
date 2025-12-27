@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .filter-group {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.1rem;
 }
 
 .filter-group label {
