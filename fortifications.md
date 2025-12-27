@@ -6,7 +6,7 @@ permalink: /fortifications/
 ---
 
 <div class="dashboard container">
-
+    <p>
     <div class="collection-filters">
         <div class="filter-group">
             <label class="lang-en-only">Filter by Era:</label>

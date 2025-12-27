@@ -10,9 +10,7 @@ permalink: /military-history/
     <!-- Introduction -->
     <!-- Era-Based Organization -->
     <div class="historical-timeline">
-        <h2 class="lang-en-only">Historical Timeline</h2>
-        <h2 class="lang-ko-only">역사적 타임라인</h2>
-
+        <p>
         <!-- Era Filter -->
         <div class="era-filter-container">
             <label class="filter-label lang-en-only">Filter by Era:</label>
